@@ -6,14 +6,13 @@
 \usepackage{listings}
 \usepackage{assignment}
 \usepackage{tikz}
-\usepackage{pgfplots}
-\pgfplotsset{compat=1.18}
+
+%\pgfplotsset{compat=1.18}
 
 
 \newcommand*{\name}{Roberto Alvarado}
 \newcommand*{\id}{00206411}
 \newcommand*{\course}{Computer Networks}
-
 \newcommand*{\assignment}{Homework 2}
 
 \begin{document}
@@ -49,8 +48,13 @@ This scenario is known as the Ethernet capture effect.
     $$P[E=A] = \frac{5}{8} $$
   \item Same idea in this case $k(A) =[0,1]$ and $k(B) = [0,1,2,3,4,5,6,7]$
     $$P[E=A] = P[A=0,B\neq0] + P[A=1,B>1]$$
-    $$P[E=A] = \frac{1}{2}*\frac{5}{8}+ \frac{1}{2}*\frac{6}{4}  $$
+    $$P[E=A] = \frac{1}{2}*\frac{7}{8}+ \frac{1}{2}*\frac{6}{8}  $$
     $$P[E=A] = \frac{7}{16} + \frac{6}{16}  $$
     $$P[E=A] = \frac{13}{16} $$
+  \item I think we can actually calculate for an n collision what is the
+    probability for A to win, for that we can see that for $P[E=A_n]$ that is
+    the probability for A to win in the n step is
+    $$P[E=A_n] = \frac{2^{n-1} + 2^{n-2}}{2^{n+2}}$$
+    $$
 \end{itemize}
 \end{document}
