@@ -1,0 +1,37 @@
+\RequirePackage[utf8]{inputenc}
+\RequirePackage[T1]{fontenc}
+\RequirePackage{babel}
+\RequirePackage{geometry}
+\RequirePackage{mathtools}
+\RequirePackage{enumitem}
+\RequirePackage{framed}
+\RequirePackage{amsthm}
+\RequirePackage{thmtools}
+\RequirePackage{etoolbox}
+\RequirePackage{fancybox}
+\RequirePackage{amsfonts}
+
+\newenvironment{myleftbar}{%
+\def\FrameCommand{\hspace{0em}\vrule width 3pt\hspace{2em}}%
+\MakeFramed{\advance\hsize-\width \FrameRestore}}%
+{\endMakeFramed}
+\declaretheoremstyle[
+spaceabove=6pt,
+spacebelow=6pt
+headfont=\normalfont\bfseries,
+headpunct={} ,
+headformat={\cornersize*{3pt}\Large{\NAME~\NUMBER}\ifstrequal{\NOTE}{}{\relax}{\NOTE}:},
+bodyfont=\normalfont,
+]{exobreak}
+
+
+\declaretheorem[style=exobreak, name=Exercise,%
+postheadhook=\leavevmode\myleftbar, %
+prefoothook = \endmyleftbar]{ex}
+
+\newcommand\C{\mathbb{C}}
+\newcommand\R{\mathbb{R}}
+\newcommand\N{\mathbb{N}}
+\newcommand\Cn{\mathbb{C}^n}
+\newcommand\Rn{\mathbb{R}^n}
+\newcommand\Nn{\mathbb{N}^n}
